@@ -11,5 +11,5 @@ jobs: # a collection of steps
       - run:
           name: install npm
           command: npm install 
-      
-      - run: bash <(curl -s https://scripts.scantist.com/staging/ci-circle-jar.sh)
+      - run: bash <(curl -s https://copilot.blackducksoftware.com/ci/circle/scripts/upload)
+      #- run: bash <(curl -s https://scripts.scantist.com/staging/ci-circle-jar.sh)
