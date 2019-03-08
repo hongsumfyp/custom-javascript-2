@@ -1,15 +1,16 @@
 version: 2 # use CircleCI 2.0
 jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
-    working_directory: ~/goof-circle # directory where steps will run
+    working_directory: ~/custom-javascript-2 # directory where steps will run
     docker: # run the steps with Docker
-      - image: timbru31/java-node # ...with this image as the primary container; this is where all `steps` will run
-      #- image: mongo:3.4.4 # and this image as the secondary service container      
+      - image: timbru31/java-node # ...with this image as the primary container;
+            
     steps: # a collection of executable commands 
       - checkout
 
       - run:
           name: install npm
           command: npm install 
-      - run: bash <(curl -s https://copilot.blackducksoftware.com/ci/circle/scripts/upload)
+          
+       - run: bash <(curl -s https://copilot.blackducksoftware.com/ci/circle/scripts/upload)
       #- run: bash <(curl -s https://scripts.scantist.com/staging/ci-circle-jar.sh)
